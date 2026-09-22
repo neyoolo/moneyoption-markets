@@ -1,0 +1,6 @@
+{
+  "name": "MoneyOption Markets",
+  "description": "Institutional-grade trading platform and dealing desk with real-time market data, interactive charting, options execution, and 24/7 direct contact support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
