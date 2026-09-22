@@ -88,7 +88,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({
   };
 
   return (
-    <div id="dashboard-screen" className="flex flex-col w-full max-w-7xl mx-auto px-4 sm:px-6 pt-6 pb-16">
+    <div id="rd-screen" className="flex flex-col w-full min-w-0 max-w-7xl mx-auto px-3 sm:px-6 pt-4 sm:pt-6 pb-16">
       {/* Toast Notification */}
       {tradeSuccessToast && (
         <div className="fixed top-20 right-4 z-50 bg-[#0b1b38] text-white px-4 py-3 rounded-2xl shadow-xl border border-[#00C48C]/40 flex items-center gap-3 animate-slideIn">
@@ -101,13 +101,13 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({
 
       {/* Website Format: Institutional Hero Overview Banner */}
       <div className="bg-gradient-to-r from-[#0b1b38] via-[#0e2348] to-[#003882] rounded-3xl p-6 sm:p-8 text-white relative overflow-hidden shadow-xl border border-[#1e3a6a] mb-8">
-        <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-          <div className="max-w-2xl">
+        <div className="relative z-10 flex min-w-0 flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div className="min-w-0 max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-[#50d9fe] text-xs font-semibold mb-3 border border-white/10">
               <span className="w-2 h-2 rounded-full bg-[#00C48C] animate-ping" />
               <span>Wall Street Dealing Desk • Equinix NY4 Low-Latency Gateway</span>
             </div>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-2">
+            <h1 className="text-xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-2 break-words">
               Next-Gen Institutional Options &amp; Derivatives Brokerage
             </h1>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-xl">
@@ -180,7 +180,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({
             <span>Institutional Dealing Flow • Live Execution Active</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-[#0b1b38] tracking-tight">
-            Market Intelligence Dashboard
+            Market Intelligence rd
           </h2>
           <p className="text-xs sm:text-sm text-[#4A5878]">
             Real-time options flow, ultra-low latency execution metrics, and cross-asset liquidity.
@@ -207,7 +207,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({
       </div>
 
       {/* 4 Key Institutional Metrics */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6">
         {/* Metric 1 */}
         <div className="p-4 sm:p-5 rounded-2xl bg-white border border-[#E2E8F4] shadow-xs flex flex-col justify-between">
           <div className="flex items-center justify-between text-xs text-[#4A5878] mb-1">
@@ -278,14 +278,14 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({
       </div>
 
       {/* Main Interactive Chart Section */}
-      <section className="bg-white rounded-3xl p-5 sm:p-6 border border-[#E2E8F4] shadow-sm mb-6">
+      <section className="min-w-0 bg-white rounded-3xl p-3 sm:p-6 border border-[#E2E8F4] shadow-sm mb-6">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
           <div>
             <div className="flex items-center gap-2">
-              <h2 className="text-lg sm:text-xl font-bold text-[#0b1b38]">
+              <h2 className="text-base sm:text-xl font-bold text-[#0b1b38] break-words">
                 SPX 500 Daily Options Flow &amp; Execution Curve
               </h2>
-              <span className="text-xs bg-[#EEF4FF] text-[#0053d4] px-2 py-0.5 rounded-full font-semibold">
+              <span className="text-[11px] bg-[#EEF4FF] text-[#0053d4] px-2 py-0.5 rounded-full font-semibold whitespace-nowrap">
                 Live Data Feed
               </span>
             </div>
@@ -294,7 +294,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex max-w-full flex-wrap items-center gap-2 overflow-x-auto">
             {/* Metric Mode Toggle */}
             <div className="bg-[#f1f3ff] p-1 rounded-xl flex items-center text-xs border border-[#E2E8F4]">
               <button
@@ -341,7 +341,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({
         </div>
 
         {/* Recharts Area Container */}
-        <div className="w-full h-72 sm:h-80">
+        <div className="w-full min-w-0 h-56 sm:h-80">
           <ResponsiveContainer width="100%" height="100%">
             {chartMetric === 'volume' ? (
               <BarChart data={chartData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
@@ -403,8 +403,8 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({
         </div>
 
         {/* Chart Sub-legend */}
-        <div className="flex flex-wrap items-center justify-between text-xs text-[#4A5878] mt-4 pt-3 border-t border-slate-100">
-          <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center justify-between gap-3 text-xs text-[#4A5878] mt-4 pt-3 border-t border-slate-100">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
             <span className="flex items-center gap-1.5">
               <span className="w-2.5 h-2.5 rounded-full bg-[#1e6bff]"></span>
               <span>Index / Options Curve</span>
@@ -424,199 +424,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({
       <SentimentVisualizer recentFills={recentFills} />
 
       {/* Two Column Grid: Live Tickers & Real-Time Order Flow */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-        {/* Left Column: Live Market Tickers (2 cols) */}
-        <div className="lg:col-span-2 bg-white rounded-3xl p-5 sm:p-6 border border-[#E2E8F4] shadow-sm">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
-            <div>
-              <h3 className="text-lg font-bold text-[#0b1b38]">
-                Real-Time Market Watch
-              </h3>
-              <p className="text-xs text-[#4A5878]">
-                Live options and derivative contracts with direct paper execution and price alerts.
-              </p>
-            </div>
-
-            <div className="flex items-center gap-2">
-              {onOpenAlertModal && (
-                <button
-                  onClick={() => onOpenAlertModal()}
-                  className="px-3 py-1 rounded-xl text-xs font-bold bg-[#EEF4FF] hover:bg-[#dce7ff] text-[#0053d4] border border-[#b3c5ff]/60 flex items-center gap-1.5 transition-all cursor-pointer"
-                  title="Configure Price Alerts"
-                >
-                  <Bell className="w-3.5 h-3.5 text-[#00C48C]" />
-                  <span>Set Alert</span>
-                </button>
-              )}
-
-              {/* Category Filter Pills */}
-              <div className="flex items-center gap-1 overflow-x-auto no-scrollbar py-1">
-                {[
-                  { id: 'all', label: 'All' },
-                  { id: 'indices', label: 'Indices' },
-                  { id: 'forex', label: 'Forex' },
-                  { id: 'options', label: 'Commodities' },
-                  { id: 'crypto', label: 'Crypto' },
-                ].map((cat) => (
-                  <button
-                    key={cat.id}
-                    onClick={() => setSelectedCategory(cat.id)}
-                    className={`px-3 py-1 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap ${
-                      selectedCategory === cat.id
-                        ? 'bg-[#0053d4] text-white shadow-xs'
-                        : 'bg-[#f1f3ff] text-[#4A5878] hover:text-[#0b1b38]'
-                    }`}
-                  >
-                    {cat.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Tickers List */}
-          <div className="flex flex-col gap-3">
-            {filteredTickers.map((ticker) => {
-              const isPositive = ticker.change >= 0;
-              return (
-                <div
-                  key={ticker.symbol}
-                  className="flex flex-col sm:flex-row sm:items-center justify-between p-3.5 rounded-2xl bg-[#faf9ff] border border-[#E2E8F4] hover:border-[#1e6bff]/50 hover:bg-white transition-all shadow-xs gap-3"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#EEF4FF] text-[#0053d4] font-bold text-xs flex items-center justify-center flex-shrink-0">
-                      {ticker.symbol.split(' ')[0]}
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <span className="font-bold text-sm text-[#0b1b38]">{ticker.symbol}</span>
-                        <span className="text-[10px] uppercase font-bold text-slate-500 bg-slate-200/70 px-1.5 py-0.2 rounded">
-                          {ticker.category}
-                        </span>
-                      </div>
-                      <span className="text-xs text-[#4A5878]">{ticker.name}</span>
-                    </div>
-                  </div>
-
-                  {/* Price & Change */}
-                  <div className="flex items-center justify-between sm:justify-end gap-4">
-                    <div className="text-right">
-                      <div className="font-mono font-bold text-sm text-[#0b1b38]">
-                        {ticker.category === 'forex'
-                          ? ticker.price.toFixed(4)
-                          : ticker.price.toLocaleString(undefined, { minimumFractionDigits: 2 })}
-                      </div>
-                      <div
-                        className={`text-xs font-semibold flex items-center justify-end ${
-                          isPositive ? 'text-[#00C48C]' : 'text-[#FF3B30]'
-                        }`}
-                      >
-                        {isPositive ? <TrendingUp className="w-3 h-3 mr-0.5" /> : <TrendingDown className="w-3 h-3 mr-0.5" />}
-                        {isPositive ? '+' : ''}
-                        {ticker.changePercent.toFixed(2)}%
-                      </div>
-                    </div>
-
-                    {/* Quick Trade Trigger Buttons */}
-                    <div className="flex items-center gap-1.5 flex-shrink-0">
-                      {onOpenAlertModal && (
-                        <button
-                          onClick={() => onOpenAlertModal(ticker.symbol)}
-                          className="p-1.5 rounded-lg bg-slate-100 hover:bg-[#EEF4FF] text-slate-500 hover:text-[#0053d4] border border-slate-200 hover:border-[#0053d4]/30 transition-all cursor-pointer"
-                          title={`Set price alert for ${ticker.symbol}`}
-                        >
-                          <Bell className="w-3.5 h-3.5" />
-                        </button>
-                      )}
-                      <button
-                        onClick={() => handleQuickTrade(ticker, 'CALL')}
-                        className="px-2.5 py-1.5 rounded-lg bg-[#00C48C]/15 hover:bg-[#00C48C] text-[#008f65] hover:text-white text-xs font-bold transition-all cursor-pointer"
-                        title="Simulate Market CALL Option"
-                      >
-                        CALL
-                      </button>
-                      <button
-                        onClick={() => handleQuickTrade(ticker, 'PUT')}
-                        className="px-2.5 py-1.5 rounded-lg bg-[#FF3B30]/15 hover:bg-[#FF3B30] text-[#cf271e] hover:text-white text-xs font-bold transition-all cursor-pointer"
-                        title="Simulate Market PUT Option"
-                      >
-                        PUT
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Right Column: Live Institutional Order Flow (1 col) */}
-        <div className="bg-white rounded-3xl p-5 sm:p-6 border border-[#E2E8F4] shadow-sm flex flex-col justify-between">
-          <div>
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#00C48C] animate-ping"></span>
-                <h3 className="text-base font-bold text-[#0b1b38]">
-                  Live Dealing Desk Fills
-                </h3>
-              </div>
-              <span className="text-[11px] text-[#4A5878] font-mono">Stream: active</span>
-            </div>
-
-            <p className="text-xs text-[#4A5878] mb-3">
-              Real-time executions processed through our NYC execution matching engine.
-            </p>
-
-            <div className="flex flex-col gap-2.5 overflow-hidden">
-              {recentFills.map((fill) => (
-                <div
-                  key={fill.id}
-                  className="p-3 rounded-xl bg-[#faf9ff] border border-[#E2E8F4] text-xs flex flex-col gap-1 transition-all hover:bg-[#EEF4FF]"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="font-bold text-[#0b1b38] flex items-center gap-1.5">
-                      <span
-                        className={`px-1.5 py-0.5 rounded text-[10px] font-bold ${
-                          fill.type === 'CALL'
-                            ? 'bg-[#00C48C]/15 text-[#008f65]'
-                            : 'bg-[#FF3B30]/15 text-[#cf271e]'
-                        }`}
-                      >
-                        {fill.type}
-                      </span>
-                      <span>{fill.symbol} {fill.strike}</span>
-                    </span>
-                    <span className="text-[11px] font-mono text-[#4A5878]">{fill.time}</span>
-                  </div>
-
-                  <div className="flex items-center justify-between text-[#4A5878] text-[11px]">
-                    <span>
-                      {fill.contracts} lots @ ${fill.price.toFixed(2)}
-                    </span>
-                    <span className="text-[#00C48C] font-mono font-semibold">
-                      ⚡ {fill.executionMs}ms
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Bottom Card Reassurance */}
-          <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-[#4A5878]">
-            <span className="flex items-center gap-1">
-              <Clock className="w-3.5 h-3.5 text-[#0053d4]" />
-              <span>Tick rate: 2.0s</span>
-            </span>
-            <button
-              onClick={onOpenCallDesk}
-              className="text-[#0053d4] hover:text-[#003fa5] font-semibold transition-colors cursor-pointer"
-            >
-              Order Desk Help &rarr;
-            </button>
-          </div>
-        </div>
-      </div>
+      
 
       {/* FBS Style Market News Section */}
       <div className="mt-8">

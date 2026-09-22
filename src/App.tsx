@@ -274,7 +274,7 @@ export default function App() {
   return (
     <div
       id="app-root"
-      className="min-h-screen bg-[#faf9ff] text-[#0b1b38] flex flex-col font-['Inter',sans-serif] selection:bg-blue-100 selection:text-blue-900"
+      className="min-h-screen w-full min-w-0 overflow-x-hidden bg-[#faf9ff] text-[#0b1b38] flex flex-col font-['Inter',sans-serif] selection:bg-blue-100 selection:text-blue-900"
     >
       {/* Top Real-time Financial Ticker Tape with Alert Action */}
       <MarketTickerBar

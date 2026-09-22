@@ -165,7 +165,7 @@ export const SentimentVisualizer: React.FC<SentimentVisualizerProps> = ({ recent
         </div>
 
         {/* View Mode & Filter Controls */}
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex max-w-full flex-wrap items-center gap-2 overflow-x-auto">
           {/* Symbol Filter */}
           <div className="flex items-center bg-[#f1f3ff] p-1 rounded-xl border border-[#E2E8F4] text-xs">
             <span className="text-[10px] text-[#4A5878] font-semibold px-2 uppercase">Symbol:</span>

@@ -145,14 +145,14 @@ export const MarketNews: React.FC<MarketNewsProps> = ({
       className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col transition-all"
     >
       {/* FBS Styled Header */}
-      <div className="p-4 sm:p-5 border-b border-slate-100 bg-gradient-to-r from-[#fafcff] via-white to-[#f5f8ff] flex flex-wrap items-center justify-between gap-3">
-        <div className="flex items-center gap-3">
+      <div className="p-3 sm:p-5 border-b border-slate-100 bg-gradient-to-r from-[#fafcff] via-white to-[#f5f8ff] flex flex-wrap items-center justify-between gap-3">
+        <div className="flex min-w-0 items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-[#0053d4]/10 border border-[#0053d4]/20 flex items-center justify-center text-[#0053d4] shadow-xs">
             <Newspaper className="w-5 h-5" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h2 className="text-base sm:text-lg font-bold text-[#0b1b38] flex items-center gap-1.5">
+              <h2 className="text-base sm:text-lg font-bold text-[#0b1b38] flex flex-wrap items-center gap-1.5">
                 FBS Market Intelligence
               </h2>
               <span className="flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#E6F9F3] text-[#008f65] border border-[#00C48C]/30">

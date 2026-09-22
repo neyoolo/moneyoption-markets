@@ -50,38 +50,49 @@ export const MarketTickerBar: React.FC<MarketTickerBarProps> = ({
           )}
         </div>
 
-        {/* Scrolling Tickers */}
-        <div className="flex items-center gap-6 overflow-x-auto no-scrollbar scroll-smooth flex-grow justify-start sm:justify-end text-[11px] font-mono">
-          {tickers.map((ticker) => {
-            const isPositive = ticker.change >= 0;
-            return (
+        {/* Slow, seamless price and currency-pair marquee */}
+        <div className="min-w-0 flex-1 overflow-hidden text-[11px] font-mono" aria-label="Live market prices">
+          <div className="ticker-marquee flex w-max hover:[animation-play-state:paused]">
+            {[0, 1].map((copy) => (
               <div
-                key={ticker.symbol}
-                onClick={() => onOpenAlertModal?.(ticker.symbol)}
-                className="group flex items-center gap-1.5 flex-shrink-0 transition-transform hover:scale-105 cursor-pointer py-0.5 px-1.5 rounded hover:bg-slate-800/60"
-                title={`Click to set price alert for ${ticker.symbol} ($${ticker.price.toFixed(ticker.category === 'forex' ? 4 : 2)})`}
+                key={copy}
+                className="flex shrink-0 items-center gap-6 pr-6"
+                aria-hidden={copy === 1}
               >
-                <span className="font-bold text-slate-300 group-hover:text-[#4fa1ff] transition-colors flex items-center gap-1">
-                  <span>{ticker.symbol}</span>
-                  <Bell className="w-2.5 h-2.5 opacity-0 group-hover:opacity-100 text-[#00C48C] transition-opacity" />
-                </span>
-                <span className="text-white font-medium">
-                  {ticker.category === 'forex'
+                {tickers.map((ticker) => {
+                  const isPositive = ticker.change >= 0;
+                  const formattedPrice = ticker.category === 'forex'
                     ? ticker.price.toFixed(4)
-                    : ticker.price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                </span>
-                <span
-                  className={`inline-flex items-center text-[10px] font-semibold px-1 rounded ${
-                    isPositive ? 'text-[#00C48C] bg-[#00C48C]/15' : 'text-[#FF3B30] bg-[#FF3B30]/15'
-                  }`}
-                >
-                  {isPositive ? <TrendingUp className="w-2.5 h-2.5 mr-0.5" /> : <TrendingDown className="w-2.5 h-2.5 mr-0.5" />}
-                  {isPositive ? '+' : ''}
-                  {ticker.changePercent.toFixed(2)}%
-                </span>
+                    : ticker.price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+                  return (
+                    <button
+                      key={`${ticker.symbol}-${copy}`}
+                      type="button"
+                      onClick={() => onOpenAlertModal?.(ticker.symbol)}
+                      className="group flex shrink-0 cursor-pointer items-center gap-1.5 rounded px-1.5 py-0.5 text-left transition-transform hover:scale-105 hover:bg-slate-800/60"
+                      title={`Click to set price alert for ${ticker.symbol} ($${formattedPrice})`}
+                    >
+                      <span className="flex items-center gap-1 font-bold text-slate-300 transition-colors group-hover:text-[#4fa1ff]">
+                        <span>{ticker.symbol}</span>
+                        <Bell className="h-2.5 w-2.5 text-[#00C48C] opacity-0 transition-opacity group-hover:opacity-100" />
+                      </span>
+                      <span className="font-medium text-white">{formattedPrice}</span>
+                      <span
+                        className={`inline-flex items-center rounded px-1 text-[10px] font-semibold ${
+                          isPositive ? 'bg-[#00C48C]/15 text-[#00C48C]' : 'bg-[#FF3B30]/15 text-[#FF3B30]'
+                        }`}
+                      >
+                        {isPositive ? <TrendingUp className="mr-0.5 h-2.5 w-2.5" /> : <TrendingDown className="mr-0.5 h-2.5 w-2.5" />}
+                        {isPositive ? '+' : ''}
+                        {ticker.changePercent.toFixed(2)}%
+                      </span>
+                    </button>
+                  );
+                })}
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </div>
     </div>
