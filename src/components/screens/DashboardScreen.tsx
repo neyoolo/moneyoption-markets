@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   ResponsiveContainer,
   AreaChart,
@@ -41,6 +41,26 @@ interface DashboardScreenProps {
   onNavigateToNews?: () => void;
 }
 
+const OPEN_CONTRACTS_BASE = 1482900;
+const OPEN_CONTRACT_STEP = 3;
+const OPEN_CONTRACT_INTERVAL_MS = 6 * 1000;
+const OPEN_CONTRACTS_PER_RUN = 200;
+const OPEN_CONTRACT_PAUSE_MS = 3 * 60 * 60 * 1000;
+const OPEN_CONTRACT_CYCLE_MS = OPEN_CONTRACTS_PER_RUN * OPEN_CONTRACT_INTERVAL_MS + OPEN_CONTRACT_PAUSE_MS;
+const OPEN_CONTRACTS_EPOCH = Date.UTC(2026, 0, 1);
+
+function getSharedOpenContracts(timestamp: number): number {
+  const elapsed = Math.max(0, timestamp - OPEN_CONTRACTS_EPOCH);
+  const cycleNumber = Math.floor(elapsed / OPEN_CONTRACT_CYCLE_MS);
+  const cycleElapsed = elapsed % OPEN_CONTRACT_CYCLE_MS;
+  const activeSteps = Math.min(
+    OPEN_CONTRACTS_PER_RUN,
+    Math.floor(cycleElapsed / OPEN_CONTRACT_INTERVAL_MS),
+  );
+
+  return OPEN_CONTRACTS_BASE + (cycleNumber * OPEN_CONTRACTS_PER_RUN + activeSteps) * OPEN_CONTRACT_STEP;
+}
+
 export const DashboardScreen: React.FC<DashboardScreenProps> = ({
   tickers,
   recentFills,
@@ -55,6 +75,12 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({
   const [chartMetric, setChartMetric] = useState<'price' | 'volume' | 'latency'>('price');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [tradeSuccessToast, setTradeSuccessToast] = useState<string | null>(null);
+  const [currentTime, setCurrentTime] = useState(() => Date.now());
+
+  useEffect(() => {
+    const interval = window.setInterval(() => setCurrentTime(Date.now()), 1000);
+    return () => window.clearInterval(interval);
+  }, []);
 
   const chartData = HISTORICAL_CHART_TIMEFRAMES[timeframe];
 
@@ -249,7 +275,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({
             <Layers className="w-4 h-4 text-[#00677d]" />
           </div>
           <div className="text-xl sm:text-2xl font-bold font-mono text-[#0b1b38] my-1">
-            1,482,900
+            {getSharedOpenContracts(currentTime).toLocaleString('en-US')}
           </div>
           <div className="flex items-center gap-1.5 text-xs">
             <span className="inline-flex items-center text-[#00C48C] font-semibold bg-[#00C48C]/10 px-1.5 py-0.5 rounded">
