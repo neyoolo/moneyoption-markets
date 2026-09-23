@@ -73,7 +73,7 @@ export const CallDeskModal: React.FC<CallDeskModalProps> = ({ isOpen, onClose })
         <div className="flex items-center gap-2 mb-6">
           <span className="w-2.5 h-2.5 rounded-full bg-[#00C48C] animate-ping"></span>
           <span className="text-xs font-bold uppercase tracking-wider text-[#50d9fe]">
-            NYC Floor Dealing Desk • Line 1
+            Lagos Floor Dealing Desk • Line 1
           </span>
         </div>
 
@@ -109,7 +109,7 @@ export const CallDeskModal: React.FC<CallDeskModalProps> = ({ isOpen, onClose })
               </div>
               <div className="text-xs text-slate-300 bg-slate-800/90 px-3 py-1.5 rounded-xl border border-slate-700/60 flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-[#00C48C]" />
-                <span>Broker: Marcus Vance (FINRA Series 3/7 Licensed)</span>
+                <span>Broker: Lagos Market Specialist • West Africa Desk</span>
               </div>
               {/* Simulated Audio waveform */}
               <div className="flex items-center gap-1 h-6 my-2">

@@ -34,24 +34,24 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ onOpenCallDesk, onOpen
         </p>
       </div>
 
-      {/* Hero Visual Card: NYC Dealing Desk */}
+      {/* Hero Visual Card: Lagos Dealing Desk */}
       <div className="relative w-full rounded-3xl overflow-hidden shadow-lg border border-[#E2E8F4] mb-8">
         <div className="h-64 sm:h-80 w-full relative">
           <img
             className="w-full h-full object-cover"
-            alt="NYC Dealing Desk & Execution Command"
+            alt="Lagos Dealing Desk & Execution Command"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQNN3mFDDyghJxHssXkbe4wSuWdQS81mlIQi6bhzlxcihdbzc3dLKvUMiFqfr7KdvdEOnyRnCO1fmDCwM0GNVMfp8FMEuQuspEeOqcLC7TESAwMwCNWrIXV3T7WfZadL66zcNmmigeJ-KRVWSzrwiDqBxR3lpD3mX8DXS9o7MlQxJCATuJgR58so8jk00wTD8sjeJuGpG8tZmWyTkvjXQi1SBg5L0WGTWivwQtkNmIwDsXHHSOTZfb"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0b1b38] via-[#0b1b38]/50 to-transparent flex flex-col justify-end p-6 sm:p-8 text-white">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-xs font-semibold w-fit mb-2">
               <MapPin className="w-3.5 h-3.5 text-[#50d9fe]" />
-              <span>Wall Street Financial District • Suite 500, NYC</span>
+              <span>Lagos Island Financial District • Victoria Island, Lagos</span>
             </div>
             <h2 className="text-xl sm:text-2xl font-bold">
-              NYC Dealing Desk &amp; Execution Command
+              Lagos Dealing Desk &amp; Execution Command
             </h2>
             <p className="text-xs sm:text-sm text-slate-200 max-w-2xl mt-1">
-              Direct physical cross-connects to the Equinix NY4 data center ensure your option orders bypass public internet congestion, executing in sub-20 milliseconds.
+              Direct connections through our Lagos data centre keep West African orders close to regional liquidity venues, with low-latency execution for active options and FX traders.
             </p>
           </div>
         </div>
@@ -95,7 +95,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ onOpenCallDesk, onOpen
           </div>
           <h3 className="text-sm font-bold text-[#0b1b38] mb-1">24/7 Global Desk</h3>
           <p className="text-xs text-[#4A5878] leading-relaxed">
-            Seamless continuous handover between New York, London, and Tokyo trading shifts for uninterrupted liquidity.
+            Seamless handover between Lagos, London, and New York trading shifts for uninterrupted liquidity across West African and global markets.
           </p>
         </div>
       </div>
@@ -112,13 +112,13 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ onOpenCallDesk, onOpen
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="p-4 rounded-2xl bg-[#faf9ff] border border-[#E2E8F4]">
             <div className="flex items-center justify-between mb-2">
-              <span className="font-bold text-sm text-[#0b1b38]">New York (HQ)</span>
+              <span className="font-bold text-sm text-[#0b1b38]">Lagos (HQ)</span>
               <span className="text-[10px] font-bold text-[#00C48C] bg-[#00C48C]/15 px-2 py-0.5 rounded-full">Primary</span>
             </div>
             <div className="text-xs text-[#4A5878] space-y-1">
-              <div>Facility: Equinix NY4 (Secaucus)</div>
-              <div>Latency: &lt; 14.8 ms</div>
-              <div>Desk: 24/7 Option Execution</div>
+              <div>Facility: Lagos Financial District</div>
+              <div>Latency: &lt; 18.5 ms</div>
+              <div>Desk: West African Option Execution</div>
             </div>
           </div>
 
@@ -168,7 +168,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ onOpenCallDesk, onOpen
             <span>256-Bit Financial Encryption &amp; SIPC Insured</span>
           </div>
           <h3 className="text-xl sm:text-2xl font-bold">
-            Speak directly with our NYC institutional trading desk
+            Speak directly with our Lagos institutional trading desk
           </h3>
           <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
             Have questions regarding volume pricing tiers, FIX API integration, or custody structures? Our licensed desk partners are ready to assist.

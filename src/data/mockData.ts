@@ -235,7 +235,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     id: 'faq-1',
     category: 'Operations',
     question: 'What are market support desk hours?',
-    answer: 'Our dealing desk and live chat agents operate 24 hours a day, 7 days a week, continuously supporting non-stop global currency, commodities, and index options cycles across New York, London, and Tokyo trading sessions.',
+    answer: 'Our Lagos dealing desk and live chat agents operate 24 hours a day, 7 days a week, supporting Nigerian clients and global currency, commodities, and index options cycles across Lagos, London, and New York trading sessions.',
   },
   {
     id: 'faq-2',
@@ -247,7 +247,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     id: 'faq-3',
     category: 'Execution',
     question: 'What is the average execution speed on option orders?',
-    answer: 'Orders routed through our Equinix NY4 direct fiber cross-connect average an ultra-low execution latency of 16.2 milliseconds, backed by tier-1 institutional market-maker liquidity and 0% slippage guarantees on major indices.',
+    answer: 'Orders routed through our Lagos data centre average low execution latency, backed by institutional market-maker liquidity and transparent execution conditions on major indices and FX pairs.',
   },
   {
     id: 'faq-4',
@@ -294,7 +294,7 @@ export const MOCK_MARKET_NEWS: import('../types/market').MarketNewsItem[] = [
     id: 'news-1',
     headline: 'S&P 500 Breaches 5,940 Level as Institutional Tech Options Flow Accelerates',
     summary: 'Heavy institutional Call sweep buying in mega-cap technology contracts propelled the benchmark S&P 500 above key resistance at 5,940, with zero-day-to-expiry (0DTE) contracts accounting for 48% of total tape turnover.',
-    content: 'Wall Street institutional dealing desks logged aggressive bullish delta accumulations during early New York morning trade. S&P 500 index options witnessed over 1.4 million contracts traded in the opening two hours. Prime broker floor desks noted sustained buying of 5,950 and 5,980 strike weekly calls, supported by positive macroeconomic revisions and declining implied volatility in the VIX.',
+    content: 'Lagos institutional dealing desks logged aggressive bullish delta accumulations during the West African session. S&P 500 index options witnessed strong contract activity as Nigerian and global traders monitored positive macroeconomic revisions and declining implied volatility.',
     category: 'Indices',
     tickerSymbols: ['SPX', 'NDX'],
     impact: 'HIGH',

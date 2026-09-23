@@ -107,7 +107,7 @@ export const GetStartedModal: React.FC<GetStartedModalProps> = ({ isOpen, onClos
                   </span>
                   <ShieldCheck className="w-4 h-4 text-[#00677d]" />
                 </div>
-                <div className="text-sm font-bold text-[#0b1b38]">NY4 Direct Feed</div>
+                <div className="text-sm font-bold text-[#0b1b38]">Lagos Direct Feed</div>
                 <div className="text-[11px] text-[#4A5878]">DMA & Floor Broker</div>
               </button>
             </div>

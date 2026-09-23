@@ -131,10 +131,10 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenCallDesk }) 
               className="w-full sm:flex-1 h-12 rounded-xl bg-[#1e6bff] hover:bg-[#0053d4] active:scale-[0.98] transition-all flex items-center justify-center gap-2 text-white text-sm font-bold shadow-lg shadow-[#1e6bff]/30 cursor-pointer"
             >
               <PhoneCall className="w-4 h-4" />
-              <span>Call +1 (800) 555-0199</span>
+              <span>Call +234 1 700 0199</span>
             </button>
             <a
-              href="tel:+18005550199"
+              href="tel:+23417000199"
               className="sm:w-auto h-12 px-4 rounded-xl bg-slate-800/90 hover:bg-slate-700 active:scale-[0.98] transition-all flex items-center justify-center gap-2 text-slate-200 text-xs font-semibold border border-slate-700"
             >
               <span>Direct Dial</span>
@@ -171,8 +171,8 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenCallDesk }) 
                 Call &rarr;
               </span>
             </div>
-            <span className="text-lg text-[#0b1b38] font-bold truncate">+1 (800) 555-0199</span>
-            <span className="text-xs text-[#4A5878]">Available 24/7 toll-free worldwide</span>
+            <span className="text-lg text-[#0b1b38] font-bold truncate">+234 1 700 0199</span>
+            <span className="text-xs text-[#4A5878]">Available 24/7 for Nigeria and global clients</span>
           </div>
         </div>
 
@@ -206,8 +206,8 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenCallDesk }) 
           </div>
           <div className="flex flex-col flex-grow min-w-0">
             <span className="text-xs text-[#4A5878] uppercase font-bold tracking-wider">Global Headquarters</span>
-            <span className="text-sm font-bold text-[#0b1b38]">123 Financial District, Suite 500</span>
-            <span className="text-xs text-[#4A5878]">New York, NY 10005, United States</span>
+            <span className="text-sm font-bold text-[#0b1b38]">12 Adeola Odeku Street, Victoria Island</span>
+            <span className="text-xs text-[#4A5878]">Lagos, Lagos State, Nigeria</span>
           </div>
         </div>
       </section>
@@ -217,14 +217,14 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenCallDesk }) 
         <div className="relative w-full h-48 sm:h-56 rounded-2xl overflow-hidden shadow-md border border-[#E2E8F4]">
           <img
             className="w-full h-full object-cover"
-            alt="NYC Dealing Desk & Execution Command"
+            alt="Lagos Dealing Desk & Execution Command"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQNN3mFDDyghJxHssXkbe4wSuWdQS81mlIQi6bhzlxcihdbzc3dLKvUMiFqfr7KdvdEOnyRnCO1fmDCwM0GNVMfp8FMEuQuspEeOqcLC7TESAwMwCNWrIXV3T7WfZadL66zcNmmigeJ-KRVWSzrwiDqBxR3lpD3mX8DXS9o7MlQxJCATuJgR58so8jk00wTD8sjeJuGpG8tZmWyTkvjXQi1SBg5L0WGTWivwQtkNmIwDsXHHSOTZfb"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0b1b38]/85 via-[#0b1b38]/20 to-transparent flex items-end p-4">
             <div className="flex items-center gap-2 text-white">
               <MapPin className="w-4 h-4 text-[#50d9fe]" />
               <span className="text-xs sm:text-sm font-semibold tracking-wide">
-                NYC Dealing Desk &amp; Execution Command (Equinix NY4 Connected)
+                Lagos Dealing Desk &amp; Execution Command (Lagos Data Centre Connected)
               </span>
             </div>
           </div>

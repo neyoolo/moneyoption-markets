@@ -14,6 +14,7 @@ import {
   Activity,
   ArrowRight,
 } from 'lucide-react';
+import marketLogo from '../services/money market logo no bg.png';
 
 interface FooterProps {
   setActiveTab: (tab: 'home' | 'news' | 'how-to-trade' | 'about' | 'contact') => void;
@@ -92,12 +93,9 @@ export const Footer: React.FC<FooterProps> = ({
             <div className="flex items-center gap-2.5">
               <img
                 alt="MoneyOption Markets Logo"
-                className="h-7 w-auto object-contain"
-                src="https://lh3.googleusercontent.com/aida/AEtjO1UqDHcOryb-7wU6eN_9-YKFBds2Jm-eamXXGbDqriTLI2RoAYNLCPQSiVP5ds_MQgzLgCs0g1B1XCe1IVXZT8hJ1mAt2MeIVRK4hpkIzpDoT1P5DcH7j3UDVEVU8IN2ZXITY5xtzOiS2eVD5_y_GDX9UyerLIo95Z2RN_aR_w-hh28Us5H0ohP4yfYrRjMmvryI1VBADBBafQRx2Zh4MUUPizUk7gwA1mAZR3voUS769eThhSjXR-zyKA"
+                className="h-16 w-40 object-contain"
+                src={marketLogo}
               />
-              <span className="font-extrabold uppercase tracking-wider text-white text-sm">
-                MONEYOPTION
-              </span>
             </div>
             <p className="text-slate-400 leading-relaxed text-[11px]">
               Institutional derivatives brokerage and proprietary dealing desk infrastructure connecting market makers, family offices, and professional options traders.
@@ -105,11 +103,11 @@ export const Footer: React.FC<FooterProps> = ({
             <div className="flex flex-col gap-1.5 text-[11px] text-slate-400 mt-2">
               <div className="flex items-center gap-2">
                 <MapPin className="w-3.5 h-3.5 text-[#50d9fe] flex-shrink-0" />
-                <span>Wall Street Financial District, New York, NY</span>
+                <span>Victoria Island Financial District, Lagos, Nigeria</span>
               </div>
               <div className="flex items-center gap-2">
                 <Zap className="w-3.5 h-3.5 text-[#00C48C] flex-shrink-0" />
-                <span>Equinix NY4 Secaucus Low-Latency Hub</span>
+                <span>Lagos Data Centre Low-Latency Hub</span>
               </div>
             </div>
           </div>
@@ -178,7 +176,7 @@ export const Footer: React.FC<FooterProps> = ({
             <span className="text-slate-400">G10 Spot FX (EUR/USD, GBP/USD)</span>
             <span className="text-slate-400">Spot Gold Bullion (XAU/USD)</span>
             <span className="text-slate-400">Bitcoin CME &amp; Spot (BTC/USD)</span>
-            <span className="text-slate-400">US 10-Year Benchmark Yield</span>
+            <span className="text-slate-400">Nigerian Fixed Income &amp; Global Yields</span>
           </div>
 
           {/* Column 4: Platform & Execution */}
@@ -201,7 +199,7 @@ export const Footer: React.FC<FooterProps> = ({
                 Price Alert Notification Engine
               </button>
             )}
-            <span className="text-slate-400">Sub-20ms Equinix NY4 Routing</span>
+            <span className="text-slate-400">Low-Latency Lagos Routing</span>
             <span className="text-slate-400">FIX Protocol 4.4 Gateways</span>
             <span className="text-slate-400">Paper Trading Simulation Sandbox</span>
           </div>
@@ -240,13 +238,13 @@ export const Footer: React.FC<FooterProps> = ({
           <div className="flex items-center gap-2">
             <span>&copy; {new Date().getFullYear()} MoneyOption Markets LLC. All rights reserved.</span>
             <span>•</span>
-            <span className="text-slate-500">Global Financial Identifier: MOM-US-NY4</span>
+            <span className="text-slate-500">Global Financial Identifier: MOM-NG-LAG</span>
           </div>
 
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2 bg-[#091730] px-3 py-1 rounded-full border border-[#1b3464]">
               <span className="w-2 h-2 rounded-full bg-[#00C48C] animate-pulse"></span>
-              <span className="text-[11px] text-slate-300 font-mono">NY4 Desk: 15.8ms • Systems Normal</span>
+              <span className="text-[11px] text-slate-300 font-mono">Lagos Desk: 15.8ms • Systems Normal</span>
             </div>
           </div>
         </div>

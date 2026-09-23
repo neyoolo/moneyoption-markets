@@ -142,7 +142,7 @@ export const HowToTradeScreen: React.FC<HowToTradeScreenProps> = ({
               Proceed with Payment
             </h3>
             <p className="text-xs text-[#4A5878] leading-relaxed">
-              Fund via wire, USDC, or approved collateral. Once payment is confirmed, your order is routed to Equinix NY4 with sub-20ms execution and zero slippage.
+              Fund via Nigerian bank transfer, USDC, or approved collateral. Once payment is confirmed, your order is routed through our Lagos desk for low-latency execution.
             </p>
           </div>
           <div className="mt-4 pt-3 border-t border-slate-100 text-[11px] text-[#00C48C] font-semibold flex items-center gap-1">
@@ -286,7 +286,7 @@ export const HowToTradeScreen: React.FC<HowToTradeScreenProps> = ({
           Institutional Greeks Reference Matrix
         </h3>
         <p className="text-xs text-[#4A5878] mb-4">
-          Key quantitative risk factors monitored in real-time by the NYC floor dealing desk.
+          Key quantitative risk factors monitored in real-time by the Lagos floor dealing desk.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

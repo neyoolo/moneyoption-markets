@@ -1,3 +1,5 @@
+import marketLogo from '../services/money market logo no bg.png';
+
 // Browser Notification and Alert sound utilities
 
 export async function requestNotificationPermission(): Promise<NotificationPermission> {
@@ -58,7 +60,7 @@ export function triggerBrowserNotification(title: string, body: string) {
     try {
       const notification = new Notification(title, {
         body,
-        icon: 'https://lh3.googleusercontent.com/aida/AEtjO1UqDHcOryb-7wU6eN_9-YKFBds2Jm-eamXXGbDqriTLI2RoAYNLCPQSiVP5ds_MQgzLgCs0g1B1XCe1IVXZT8hJ1mAt2MeIVRK4hpkIzpDoT1P5DcH7j3UDVEVU8IN2ZXITY5xtzOiS2eVD5_y_GDX9UyerLIo95Z2RN_aR_w-hh28Us5H0ohP4yfYrRjMmvryI1VBADBBafQRx2Zh4MUUPizUk7gwA1mAZR3voUS769eThhSjXR-zyKA',
+        icon: marketLogo,
         tag: 'market-alert-' + Date.now(),
       });
 

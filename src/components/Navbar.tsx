@@ -14,6 +14,7 @@ import {
   ArrowRight,
   ShieldCheck,
 } from 'lucide-react';
+import marketLogo from '../services/money market logo no bg.png';
 
 interface NavbarProps {
   activeTab: 'home' | 'news' | 'how-to-trade' | 'about' | 'contact';
@@ -73,8 +74,8 @@ export const Navbar: React.FC<NavbarProps> = ({
         >
           <img
             alt="MoneyOption Markets Logo"
-            className="h-8 sm:h-9 w-auto object-contain flex-shrink-0 transition-transform group-hover:scale-105"
-            src="https://lh3.googleusercontent.com/aida/AEtjO1UqDHcOryb-7wU6eN_9-YKFBds2Jm-eamXXGbDqriTLI2RoAYNLCPQSiVP5ds_MQgzLgCs0g1B1XCe1IVXZT8hJ1mAt2MeIVRK4hpkIzpDoT1P5DcH7j3UDVEVU8IN2ZXITY5xtzOiS2eVD5_y_GDX9UyerLIo95Z2RN_aR_w-hh28Us5H0ohP4yfYrRjMmvryI1VBADBBafQRx2Zh4MUUPizUk7gwA1mAZR3voUS769eThhSjXR-zyKA"
+            className="h-11 w-28 sm:h-12 sm:w-32 object-contain flex-shrink-0 transition-transform group-hover:scale-105"
+            src={marketLogo}
           />
           {/* <div className="flex flex-col min-w-0">
             <div className="flex items-center gap-1.5">

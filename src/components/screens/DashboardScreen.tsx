@@ -21,7 +21,6 @@ import {
   ArrowUpRight,
   ArrowDownRight,
   Clock,
-  RefreshCw,
   PhoneCall,
   SlidersHorizontal,
   Bell,
@@ -105,7 +104,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({
           <div className="min-w-0 max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-[#50d9fe] text-xs font-semibold mb-3 border border-white/10">
               <span className="w-2 h-2 rounded-full bg-[#00C48C] animate-ping" />
-              <span>Wall Street Dealing Desk • Equinix NY4 Low-Latency Gateway</span>
+              <span>Lagos Dealing Desk • West Africa Low-Latency Gateway</span>
             </div>
             <h1 className="text-xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-2 break-words">
               Next-Gen Institutional Options &amp; Derivatives Brokerage
@@ -134,9 +133,9 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({
           {/* Right Action Box: Floor Desk Hotline & Quick Paper Balance */}
           <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-5 sm:p-6 flex flex-col gap-4 lg:w-80 flex-shrink-0 shadow-inner">
             <div className="flex items-center justify-between border-b border-white/10 pb-3">
-              <div>
+              <div className="min-w-0">
                 <span className="text-[10px] text-slate-300 uppercase tracking-wider font-bold">Paper Trading Sandbox</span>
-                <div className="text-xl font-bold font-mono text-[#00C48C] mt-0.5">
+                <div key={virtualBalance} className="text-xl font-bold font-mono text-[#00C48C] mt-0.5 animate-balanceTick">
                   ${virtualBalance.toLocaleString('en-US', { minimumFractionDigits: 2 })}
                 </div>
               </div>
@@ -166,7 +165,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({
 
             <div className="text-[11px] text-slate-300 text-center flex items-center justify-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#00C48C] animate-pulse" />
-              <span>NY4 Cross-Connect: <strong className="font-mono text-white">{deskLatency.toFixed(1)}ms</strong></span>
+              <span>Lagos Cross-Connect: <strong className="font-mono text-white">{deskLatency.toFixed(1)}ms</strong></span>
             </div>
           </div>
         </div>
@@ -199,7 +198,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({
           <div className="bg-white border border-[#E2E8F4] px-3.5 py-1.5 rounded-xl flex items-center gap-2 shadow-xs">
             <Activity className="w-4 h-4 text-[#00C48C]" />
             <div className="text-xs">
-              <span className="text-[#4A5878]">NY4 Latency: </span>
+              <span className="text-[#4A5878]">Lagos Latency: </span>
               <span className="font-mono font-bold text-[#0b1b38]">{deskLatency.toFixed(1)} ms</span>
             </div>
           </div>
@@ -411,7 +410,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({
             </span>
             <span className="flex items-center gap-1.5">
               <span className="w-2.5 h-2.5 rounded-full bg-[#00C48C]"></span>
-              <span>Equinix NY4 Low-Latency Target</span>
+              <span>Lagos Low-Latency Target</span>
             </span>
           </div>
           <span className="text-[11px] font-mono text-slate-500">

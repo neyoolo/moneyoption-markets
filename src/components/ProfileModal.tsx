@@ -81,11 +81,11 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
         <div className="space-y-2 mb-5 text-xs">
           <div className="flex justify-between py-2 border-b border-slate-100">
             <span className="text-[#4A5878]">Execution Routing</span>
-            <span className="font-semibold text-[#0b1b38]">Equinix NY4 Cross-Connect</span>
+            <span className="font-semibold text-[#0b1b38]">Lagos Data Centre Cross-Connect</span>
           </div>
           <div className="flex justify-between py-2 border-b border-slate-100">
             <span className="text-[#4A5878]">Assigned Dealing Floor</span>
-            <span className="font-semibold text-[#0b1b38]">Wall Street Desk 04</span>
+            <span className="font-semibold text-[#0b1b38]">Lagos Desk 04</span>
           </div>
           <div className="flex justify-between py-2 border-b border-slate-100">
             <span className="text-[#4A5878]">SLA Response Time</span>
