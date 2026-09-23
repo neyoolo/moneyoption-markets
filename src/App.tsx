@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { MarketTickerBar } from './components/MarketTickerBar';
@@ -19,14 +19,13 @@ import { triggerBrowserNotification } from './utils/notification';
 const SANDBOX_BALANCE_MIN = 94000;
 const SANDBOX_BALANCE_MAX = 210000;
 
-const createSandboxBalance = (previousValue?: number) => {
-  if (previousValue === undefined) {
-    return Math.floor(SANDBOX_BALANCE_MIN + Math.random() * (SANDBOX_BALANCE_MAX - SANDBOX_BALANCE_MIN + 1));
-  }
-
-  const step = Math.floor(100 + Math.random() * 901);
-  const direction = Math.random() < 0.5 ? -1 : 1;
-  return Math.min(SANDBOX_BALANCE_MAX, Math.max(SANDBOX_BALANCE_MIN, previousValue + direction * step));
+const getSharedSandboxBalance = (timeWindow: number) => {
+  let hash = timeWindow;
+  hash = (hash ^ (hash >>> 16)) * 0x45d9f3b;
+  hash = (hash ^ (hash >>> 16)) * 0x45d9f3b;
+  hash ^= hash >>> 16;
+  const normalized = (hash >>> 0) / 0xffffffff;
+  return Math.floor(SANDBOX_BALANCE_MIN + normalized * (SANDBOX_BALANCE_MAX - SANDBOX_BALANCE_MIN));
 };
 
 export default function App() {
@@ -34,25 +33,14 @@ export default function App() {
   const [tickers, setTickers] = useState<MarketTicker[]>(INITIAL_TICKERS);
   const [recentFills, setRecentFills] = useState<OrderFill[]>(INITIAL_RECENT_FILLS);
   const [deskLatency, setDeskLatency] = useState<number>(16.2);
-  const [virtualBalance, setVirtualBalance] = useState<number>(() => createSandboxBalance());
+  const [sandboxTimeWindow, setSandboxTimeWindow] = useState(() => Math.floor(Date.now() / (10 * 60 * 1000)));
+  const virtualBalance = getSharedSandboxBalance(sandboxTimeWindow);
   const [userName, setUserName] = useState<string>('Alexander Vance');
 
-  const tickerSnapshot = useRef(tickers);
-  useEffect(() => {
-    tickerSnapshot.current = tickers;
-  }, [tickers]);
-
-  // Move the sandbox balance every three seconds in small pip-like steps.
   useEffect(() => {
     const interval = window.setInterval(() => {
-      const forexTicker = tickerSnapshot.current.find((ticker) => ticker.symbol === 'EUR/USD');
-      const marketDirection = forexTicker && forexTicker.changePercent >= 0 ? 1 : -1;
-      setVirtualBalance((previousBalance) => {
-        const step = Math.floor(100 + Math.random() * 901);
-        const direction = forexTicker?.changePercent === 0 ? (Math.random() < 0.5 ? -1 : 1) : marketDirection;
-        return Math.min(SANDBOX_BALANCE_MAX, Math.max(SANDBOX_BALANCE_MIN, previousBalance + direction * step));
-      });
-    }, 3000);
+      setSandboxTimeWindow(Math.floor(Date.now() / (10 * 60 * 1000)));
+    }, 10000);
 
     return () => window.clearInterval(interval);
   }, []);
@@ -226,12 +214,12 @@ export default function App() {
 
     // Deduct premium or calculate margin
     const tradeCost = fillData.contracts * fillData.price * 100;
-    setVirtualBalance((previousBalance) => Math.max(0, previousBalance - tradeCost * 0.05)); // 5% simulated option premium outlay
+    void tradeCost;
   };
 
   const handleAccountCreated = (name: string, balance: number) => {
     setUserName(name);
-    setVirtualBalance(balance);
+    void balance;
   };
 
   const handleAddAlert = (
@@ -357,7 +345,7 @@ export default function App() {
         onClose={() => setIsProfileOpen(false)}
         userName={userName}
         virtualBalance={virtualBalance}
-        onResetBalance={() => setVirtualBalance(100000)}
+        onResetBalance={() => undefined}
         onOpenCallDesk={() => {
           setIsProfileOpen(false);
           setIsCallDeskOpen(true);
