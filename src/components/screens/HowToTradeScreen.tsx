@@ -94,56 +94,59 @@ export const HowToTradeScreen: React.FC<HowToTradeScreenProps> = ({
         </p>
       </div>
 
-      {/* 3 Steps Execution Blueprint */}
+      {/* 3 Steps Execution Blueprint — UPDATED: contact desk → fill in & agree on terms → proceed with payment */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        {/* Step 1: Contact Desk */}
         <div className="p-5 rounded-2xl bg-white border border-[#E2E8F4] shadow-xs flex flex-col justify-between">
           <div>
             <div className="w-10 h-10 rounded-xl bg-[#EEF4FF] text-[#0053d4] font-bold flex items-center justify-center mb-3">
               01
             </div>
             <h3 className="text-base font-bold text-[#0b1b38] mb-1">
-              Select Asset &amp; Expiry
+              Contact Desk
             </h3>
             <p className="text-xs text-[#4A5878] leading-relaxed">
-              Target institutional 0DTE contracts for rapid intra-day liquidity or calendar options up to 180 days for thematic macro trends.
+              Reach out to our senior dealing desk via phone or secure chat. We&apos;ll discuss your objectives, risk profile, and instrument selection (SPX, NDX, commodities, FX).
             </p>
           </div>
           <div className="mt-4 pt-3 border-t border-slate-100 text-[11px] text-[#0053d4] font-semibold flex items-center gap-1">
-            <span>SPX, NDX, Gold, FX Majors</span>
+            <span>📞 24/7 institutional coverage · +1 (212) 555-0199</span>
           </div>
         </div>
 
+        {/* Step 2: Fill in & Agree on Terms and Conditions */}
         <div className="p-5 rounded-2xl bg-white border border-[#E2E8F4] shadow-xs flex flex-col justify-between">
           <div>
             <div className="w-10 h-10 rounded-xl bg-[#E6F8FB] text-[#00677d] font-bold flex items-center justify-center mb-3">
               02
             </div>
             <h3 className="text-base font-bold text-[#0b1b38] mb-1">
-              Calibrate Risk &amp; Delta
+              Fill in &amp; Agree on Terms
             </h3>
             <p className="text-xs text-[#4A5878] leading-relaxed">
-              Use directional vertical spreads or non-directional volatility condors to cap potential drawdowns and establish defined profit targets.
+              Complete the order ticket with expiry, strikes, and strategy. Review the ISDA/execution agreement, margin requirements, and confirm all terms electronically.
             </p>
           </div>
           <div className="mt-4 pt-3 border-t border-slate-100 text-[11px] text-[#00677d] font-semibold flex items-center gap-1">
-            <span>Defined-risk mathematical curves</span>
+            <span>📋 Digital signature · term sheet · risk disclosure</span>
           </div>
         </div>
 
+        {/* Step 3: Proceed with Payment */}
         <div className="p-5 rounded-2xl bg-white border border-[#E2E8F4] shadow-xs flex flex-col justify-between">
           <div>
             <div className="w-10 h-10 rounded-xl bg-[#f1f3ff] text-[#0053d4] font-bold flex items-center justify-center mb-3">
               03
             </div>
             <h3 className="text-base font-bold text-[#0b1b38] mb-1">
-              Route with 0% Slippage
+              Proceed with Payment
             </h3>
             <p className="text-xs text-[#4A5878] leading-relaxed">
-              Your trade triggers immediate matching at Equinix NY4 with sub-20ms execution and price improvement from tier-1 institutional market makers.
+              Fund via wire, USDC, or approved collateral. Once payment is confirmed, your order is routed to Equinix NY4 with sub-20ms execution and zero slippage.
             </p>
           </div>
           <div className="mt-4 pt-3 border-t border-slate-100 text-[11px] text-[#00C48C] font-semibold flex items-center gap-1">
-            <span>Equinix NY4 Direct Cross-Connect</span>
+            <span>⚡ Instant routing · tier-1 liquidity · 0% slippage</span>
           </div>
         </div>
       </div>

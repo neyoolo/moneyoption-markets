@@ -76,6 +76,15 @@ export const MarketNews: React.FC<MarketNewsProps> = ({
     loadNews(selectedCategory, selectedTicker, selectedImpact, searchQuery);
   }, [selectedCategory, selectedTicker, selectedImpact]);
 
+  // Refresh the live wire periodically so an open dashboard keeps moving.
+  useEffect(() => {
+    const refreshInterval = window.setInterval(() => {
+      loadNews(selectedCategory, selectedTicker, selectedImpact, searchQuery);
+    }, 5 * 60 * 1000);
+
+    return () => window.clearInterval(refreshInterval);
+  }, [selectedCategory, selectedTicker, selectedImpact, searchQuery]);
+
   // Handle search debounce
   useEffect(() => {
     const handler = setTimeout(() => {
