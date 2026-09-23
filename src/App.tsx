@@ -33,13 +33,13 @@ export default function App() {
   const [tickers, setTickers] = useState<MarketTicker[]>(INITIAL_TICKERS);
   const [recentFills, setRecentFills] = useState<OrderFill[]>(INITIAL_RECENT_FILLS);
   const [deskLatency, setDeskLatency] = useState<number>(16.2);
-  const [sandboxTimeWindow, setSandboxTimeWindow] = useState(() => Math.floor(Date.now() / (10 * 60 * 1000)));
+  const [sandboxTimeWindow, setSandboxTimeWindow] = useState(() => Math.floor(Date.now() / (30 * 1000)));
   const virtualBalance = getSharedSandboxBalance(sandboxTimeWindow);
   const [userName, setUserName] = useState<string>('Alexander Vance');
 
   useEffect(() => {
     const interval = window.setInterval(() => {
-      setSandboxTimeWindow(Math.floor(Date.now() / (10 * 60 * 1000)));
+      setSandboxTimeWindow(Math.floor(Date.now() / (30 * 1000)));
     }, 10000);
 
     return () => window.clearInterval(interval);
