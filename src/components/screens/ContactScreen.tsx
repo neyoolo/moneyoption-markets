@@ -15,8 +15,10 @@ import {
   Sparkles,
   ArrowRight,
   Headphones,
+  MessageCircle,
 } from 'lucide-react';
 import { FAQ_ITEMS } from '../../data/mockData';
+import { BROKERS, getWhatsAppUrl } from '../../data/brokers';
 
 interface ContactScreenProps {
   onOpenCallDesk: () => void;
@@ -228,6 +230,43 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenCallDesk }) 
               </span>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Broker WhatsApp Directory */}
+      <section className="mb-6 rounded-3xl border border-[#E2E8F4] bg-white p-5 shadow-sm sm:p-7">
+        <div className="mb-4 flex flex-wrap items-end justify-between gap-2">
+          <div>
+            <span className="text-[11px] font-bold uppercase tracking-wider text-[#0053d4]">Direct broker line</span>
+            <h2 className="text-xl font-bold text-[#0b1b38]">Chat with a Lagos broker</h2>
+          </div>
+          <span className="text-xs text-[#4A5878]">Mock WhatsApp contacts for setup</span>
+        </div>
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {BROKERS.map((broker) => (
+            <div key={broker.id} className="flex min-w-0 items-center justify-between gap-3 rounded-2xl border border-[#E2E8F4] bg-[#fafbfe] p-3">
+              <div className="flex min-w-0 items-center gap-3">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#00C48C]/15 font-bold text-[#008f65]">
+                  {broker.name.charAt(0)}
+                </div>
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-bold text-[#0b1b38]">{broker.name}</p>
+                  <p className="truncate text-[11px] text-[#4A5878]">{broker.role}</p>
+                  <p className="text-[10px] font-medium text-[#008f65]">{broker.whatsapp}</p>
+                </div>
+              </div>
+              <a
+                href={getWhatsAppUrl(broker.whatsapp)}
+                target="_blank"
+                rel="noreferrer"
+                className="flex h-9 shrink-0 items-center gap-1.5 rounded-xl bg-[#00C48C] px-2.5 text-[11px] font-bold text-[#062f25] transition-colors hover:bg-[#00ad7a]"
+                title={`Message ${broker.name} on WhatsApp`}
+              >
+                <MessageCircle className="h-3.5 w-3.5" />
+                WhatsApp
+              </a>
+            </div>
+          ))}
         </div>
       </section>
 

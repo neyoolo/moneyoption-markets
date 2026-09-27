@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, PhoneOff, Mic, MicOff, Volume2, ShieldCheck, Clock, UserCheck, X } from 'lucide-react';
+import { PhoneOff, Mic, MicOff, Volume2, ShieldCheck, Clock, UserCheck, X, MessageCircle, Phone } from 'lucide-react';
+import { BROKERS, getWhatsAppUrl } from '../data/brokers';
 
 interface CallDeskModalProps {
   isOpen: boolean;
@@ -73,7 +74,7 @@ export const CallDeskModal: React.FC<CallDeskModalProps> = ({ isOpen, onClose })
         <div className="flex items-center gap-2 mb-6">
           <span className="w-2.5 h-2.5 rounded-full bg-[#00C48C] animate-ping"></span>
           <span className="text-xs font-bold uppercase tracking-wider text-[#50d9fe]">
-            Lagos Floor Dealing Desk • Line 1
+            Lagos Floor Dealing Desk • WhatsApp Call
           </span>
         </div>
 
@@ -94,7 +95,7 @@ export const CallDeskModal: React.FC<CallDeskModalProps> = ({ isOpen, onClose })
             {callState === 'dialing' ? 'Connecting to Priority Queue...' : 'Connected with Floor Broker'}
           </h3>
           <p className="text-xs text-slate-300 font-mono mb-2">
-            +1 (800) 555-0199 • Toll-Free Worldwide
+            Select a broker below to start a WhatsApp call.
           </p>
 
           {callState === 'dialing' ? (
@@ -120,6 +121,26 @@ export const CallDeskModal: React.FC<CallDeskModalProps> = ({ isOpen, onClose })
                     className="w-1 bg-[#50d9fe] rounded-full animate-pulse transition-all duration-300"
                   />
                 ))}
+              </div>
+              <div className="mt-3 w-full border-t border-slate-800 pt-3 text-left">
+                <p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">WhatsApp broker calls</p>
+                <div className="grid grid-cols-2 gap-2">
+                  {BROKERS.map((broker) => (
+                    <a
+                      key={broker.id}
+                      href={getWhatsAppUrl(broker.whatsapp)}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex min-w-0 items-center justify-between gap-1.5 rounded-lg border border-slate-700 bg-slate-800/70 px-2 py-2 text-[11px] text-slate-200 transition-colors hover:border-[#00C48C]/50 hover:text-[#00C48C]"
+                    >
+                      <span className="flex min-w-0 items-center gap-1.5">
+                        <MessageCircle className="h-3.5 w-3.5 shrink-0 text-[#00C48C]" />
+                        <span className="truncate">{broker.name}</span>
+                      </span>
+                      <Phone className="h-3 w-3 shrink-0 text-[#00C48C]" />
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           )}
@@ -156,15 +177,6 @@ export const CallDeskModal: React.FC<CallDeskModalProps> = ({ isOpen, onClose })
           </button>
         </div>
 
-        {/* Fallback Native Tel Option */}
-        <div className="mt-4 text-center">
-          <a
-            href="tel:+18005550199"
-            className="text-[11px] text-slate-400 hover:text-[#50d9fe] underline transition-colors"
-          >
-            Or launch phone app: dial +1 (800) 555-0199 directly
-          </a>
-        </div>
       </div>
     </div>
   );
