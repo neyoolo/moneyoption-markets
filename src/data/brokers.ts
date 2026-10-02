@@ -35,6 +35,13 @@ export const BROKERS: Broker[] = [
     whatsapp: '+234 901 000 1004',
     availability: 'Available now',
   },
+    {
+    id: 'akinkunmi',
+    name: 'Akinkunmi',
+    role: 'West Africa Market Broker',
+    whatsapp: '+234 901 000 1003',
+    availability: 'Available now',
+  },
 ];
 
 export const getWhatsAppUrl = (phone: string) =>

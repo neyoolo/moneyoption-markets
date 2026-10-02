@@ -90,9 +90,7 @@ export const GetStartedModal: React.FC<GetStartedModalProps> = ({ isOpen, onClos
                 </div>
                 <div className="text-sm font-bold text-[#0b1b38]">$100,000 Virtual</div>
                 <div className="text-[11px] text-[#4A5878]">Zero financial risk</div>
-              </button>
-
-              <button
+              </button>              <button
                 type="button"
                 onClick={() => setAccountType('institutional')}
                 className={`p-3.5 rounded-2xl border text-left transition-all ${
