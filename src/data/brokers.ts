@@ -21,13 +21,13 @@ export const BROKERS: Broker[] = [
     whatsapp: '+2347047926151',
     availability: 'Available now',
   },
-  {
-    id: 'akintayo',
-    name: 'Akintayo',
-    role: 'West Africa Market Broker',
-    whatsapp: '+2349016922283',
-    availability: 'Available now',
-  },
+  // {
+  //   id: 'akintayo',
+  //   name: 'Akintayo',
+  //   role: 'West Africa Market Broker',
+  //   whatsapp: '+2349016922283',
+  //   availability: 'Available now',
+  // },
   {
     id: 'michael',
     name: 'Michael',
